@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  postgres:
+    image: postgres:9.6-alpine
+    environment:
+      POSTGRES_USER: example
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: example
+    volumes:
+       - ./init:/docker-entrypoint-initdb.d/
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  pgadmin:
+    links:
+      - postgres:postgres
+    image: fenglc/pgadmin4
+    environment:
+      DEFAULT_USER: example
+      DEFAULT_PASSWORD: password
+    ports:
+      - "5050:5050"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  postgres:
+    driver: bridge
