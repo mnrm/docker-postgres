@@ -28,13 +28,13 @@ For database initialization, note that any sql scripts in the `init` directory w
 
 1. Open http://localhost:5050 in a browser.
 2. Add a new server:
-   i. From the main menu, Object > Create > Server
-   ii. General > Name: `any name you like`
-   iii. Connection > Host Name/Address: `postgres`
-   iv. Connection > Port: `5432`
-   v. Connection > Maintenance Database: `postgres`
-   vi. Connection > Username: `example`
-   vii. Connection > Password: `password`.
+   * From the main menu, Object > Create > Server
+   * General > Name: `any name you like`
+   * Connection > Host Name/Address: `postgres`
+   * Connection > Port: `5432`
+   * Connection > Maintenance Database: `postgres`
+   * Connection > Username: `example`
+   * Connection > Password: `password`.
 3. On the left-side browser, navigate to "Servers > what_you_named_your_server > Databases > example > Schemas > public > Tables > users". Right-click on the "users" table and select "View/Edit Data > All Rows".
 
 ### cli
